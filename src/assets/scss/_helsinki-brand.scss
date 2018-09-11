@@ -1,0 +1,163 @@
+// Helsinki Brand Colors
+
+$hel-copper:        #00d7a7;
+$hel-bus:           #0000bf;
+$hel-coat:          #0072c6;
+$hel-fog:           #9fc9eb;
+$hel-metro:         #fd4f00;
+$hel-brick:         #bd2719;
+$hel-suomenlinna:   #f5a3c7;
+$hel-engel:         #ffe977;
+$hel-tram:          #009246;
+$hel-summer:        #ffc61e;
+$hel-silver:        #dedfe1;
+$hel-gold:          #c2a251;
+
+
+// Color helper classes
+
+.bg-hel-copper {
+  background-color: $hel-copper;
+}
+
+.bg-hel-bus {
+  background-color: $hel-bus;
+}
+
+.bg-hel-coat {
+  background-color: $hel-coat;
+}
+
+.bg-hel-fog {
+  background-color: $hel-fog;
+}
+
+.bg-hel-metro {
+  background-color: $hel-metro;
+}
+
+.bg-hel-brick {
+  background-color: $hel-brick;
+}
+
+.bg-hel-suomenlinna {
+  background-color: $hel-suomenlinna;
+}
+
+.bg-hel-engel {
+  background-color: $hel-engel;
+}
+
+.bg-hel-tram {
+  background-color: $hel-tram;
+}
+
+.bg-hel-summer {
+  background-color: $hel-summer;
+}
+
+.bg-hel-silver {
+  background-color: $hel-silver;
+}
+
+.bg-hel-gold {
+  background-color: $hel-gold;
+}
+
+.text-hel-copper {
+  color: $hel-copper;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-copper;
+  }
+}
+
+.text-hel-bus {
+  color: $hel-bus;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-bus;
+  }
+}
+
+.text-hel-coat {
+  color: $hel-coat;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-coat;
+  }
+}
+
+.text-hel-fog {
+  color: $hel-fog;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-fog;
+  }
+}
+
+.text-hel-metro {
+  color: $hel-metro;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-metro;
+  }
+}
+
+.text-hel-brick {
+  color: $hel-brick;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-brick;
+  }
+}
+
+.text-hel-suomenlinna {
+  color: $hel-suomenlinna;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-suomenlinna;
+  }
+}
+
+.text-hel-engel {
+  color: $hel-engel;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-engel;
+  }
+}
+
+.text-hel-tram {
+  color: $hel-tram;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-tram;
+  }
+}
+
+.text-hel-summer {
+  color: $hel-summer;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-summer;
+  }
+}
+
+.text-hel-silver {
+  color: $hel-silver;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-silver;
+  }
+}
+
+.text-hel-gold {
+  color: $hel-gold;
+  &:link, &:visited, &:hover, &:active {
+    color: $hel-gold;
+  }
+}
+
+.text-white {
+  color: #ffffff;
+  &:link, &:visited, &:hover, &:active {
+    color: #ffffff;
+  }
+}
+
+.text-black {
+  color: #000000;
+  &:link, &:visited, &:hover, &:active {
+    color: #000000;
+  }
+}

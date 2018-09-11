@@ -1,0 +1,123 @@
+---
+subject: Varaamo common reservation confirmation
+---
+
+<wrapper class="header">
+  <container>
+    <spacer size="24"></spacer>
+    <row class="collapse">
+      <columns small="12">
+        <h4 class="text-right">Varaamo</h4>
+      </columns>
+    </row>
+  </container>
+</wrapper>
+
+<container>
+
+  <spacer size="12"></spacer>
+
+  <row>
+    <columns small="12">
+      <spacer size="24"></spacer>
+      <p>Hei {{{{raw}}}}{{ reserver_name }}{{{{/raw}}}},</p>
+      <p>Sinulle on tehty uusi tilavaraus</p>
+      <spacer size="12"></spacer>
+
+      <callout>
+        <spacer size="12"></spacer>
+        <h4>{{{{raw}}}}{{ event_subject }}{{{{/raw}}}}</h4>
+        <row>
+          <columns large="6">
+            <small class="text-hel-gold">Alkaa</small>
+            <p>{{{{raw}}}}{{ begin }}{{{{/raw}}}}</p>
+          </columns>
+          <columns large="6">
+            <small class="text-hel-gold">Päättyy</small>
+            <p>{{{{raw}}}}{{ end }}{{{{/raw}}}}</p>
+          </columns>
+        <row>
+      </callout>
+
+      <spacer size="12"></spacer>
+
+      <callout>
+        <spacer size="12"></spacer>
+        <h4>{{{{raw}}}}{{ resource }}{{{{/raw}}}}</h4>
+
+        <row>
+          {% if resource_main_image_url is defined %}
+          <columns large="4">
+            <img class="thumbnail" src="{{{{raw}}}}{{ resource_main_image_url }}{{{{/raw}}}}?dim=200x200">
+          </columns>
+          {% endif %}
+          <columns large="1">
+          </columns>
+          {% if unit is defined %}
+          <columns large="7">
+            <p class="lead">{{{{raw}}}}{{ unit }}{{{{/raw}}}}</p>
+          </columns>
+          {% endif %}
+        </row>
+
+        <spacer size="24"></spacer>
+
+        {% if extra_content is defined %}
+        <h5>Lisäohjeet</h5>
+        <p>{{{{raw}}}}{{ extra_content }}{{{{/raw}}}}</p>
+        {% endif %}
+
+        {% if access_code is defined %}
+        <callout class="success">
+          <spacer size="12"></spacer>
+          <p class="lead text-center">Ovikoodi: {{{{raw}}}}{{ access_code }}{{{{/raw}}}}</p>
+        </callout>
+        {% endif %}
+
+        <spacer size="24"></spacer>
+        {% if resource_ground_plan_url is defined %}
+        <h5>Pohjakuva</h5>
+        <img class="thumbnail" src="{{{{raw}}}}{{ resource_ground_plan_url }}{{{{/raw}}}}">
+        {% endif %}
+      </callout>
+
+
+      <p>
+      Ystävällisin terveisin,<br>
+      Varaamo
+      </p>
+    </columns>
+  </row>
+</container>
+
+<spacer size="16"></spacer>
+
+<container>
+  <wrapper>
+    <spacer size="16"></spacer>
+    <row>
+      <columns>
+        <p><strong>Varaamo</strong><br>
+        Varaamosta voit varata julkisia tiloja ja laitteita omaan käyttöösi.</p>
+        <p>
+          <a href="https://varaamo.hel.fi">varaamo.hel.fi</a> |
+          <a href="https://varaamo.hel.fi">varaamo.espoo.fi</a> |
+          <a href="https://varaamo.hel.fi">varaamo.vantaa.fi</a>
+        </p>
+      </columns>
+    </row>
+  </wrapper>
+</container>
+<container>
+  <wrapper class="secondary">
+
+    <spacer size="16"></spacer>
+    <row>
+      <columns>
+        <p><small>Tähän viestiin ei voi vastata. Löydät yhteystiedot Varaamon verkkosivuilta. Varaukseen liittyvissä asioissa voit olla yhteydessä tilan tarjoajaan. Palutetta voit lähettää <a href="https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/palaute">täältä</a>.</small></p>
+      </columns>
+    </row>
+  </wrapper>
+</container>
+
+<spacer size="120"></spacer>
