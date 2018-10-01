@@ -1,4 +1,5 @@
 ---
+layout: varaamo
 subject: Varaamo common reservation confirmation
 reserver_name: Nimi Niminen
 event_subject: Käyttäjätestauskokous
@@ -16,84 +17,71 @@ unit_tprek_id: 20
 department: Treenihuoneet (kellari)
 ---
 
-<wrapper class="header">
-  <container>
-    <spacer size="24"></spacer>
-    <row class="collapse">
-      <columns small="12">
-        <h4 class="text-right">Varaamo</h4>
-      </columns>
-    </row>
-  </container>
-</wrapper>
-
 <container>
 
-  <spacer size="12"></spacer>
+  <spacer size="24"></spacer>
 
   <row>
     <columns small="12">
       <spacer size="24"></spacer>
       <p>Hei {{ reserver_name }},</p>
-      <p>Sinulle on tehty uusi tilavaraus</p>
+      <p>Sinulle on tehty uusi varaus tilaan <strong>{{ resource }}</strong>.</p>
       <spacer size="12"></spacer>
 
       <callout>
         <spacer size="12"></spacer>
-        <h4>{{ event_subject }}</h4>
+        <h4 class="text-hel-coat">Varaus</h4>
+        <h6>{{ event_subject }}</h6>
         <row>
           <columns large="6">
-            <small class="text-hel-gold">Alkaa</small>
-            <p>{{ begin }}</p>
+            <small class="text-hel-coat">Alkaa</small>
+            <br/>{{ begin }}
           </columns>
           <columns large="6">
-            <small class="text-hel-gold">Päättyy</small>
-            <p>{{ end }}</p>
-          </columns>
-        <row>
-      </callout>
-
-      <spacer size="12"></spacer>
-
-      <callout>
-        <spacer size="12"></spacer>
-        <h4>{{ resource }}</h4>
-
-        <row>
-          <columns large="4">
-            <a href="https://varaamotest.hel.ninja/resources/aurrojvupy3q"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
-          </columns>
-          <columns large="1">
-          </columns>
-          <columns large="7">
-            <p class="lead">{{ unit }}</p>
-            <p><strong>{{ department }}</strong><br>
-            {{ unit_street_address }}<br>
-            {{ unit_post_code }}</p>
-            <a href="https://palvelukartta.hel.fi/unit/{{ unit_tprek_id }}#!route-details">Sijainti kartalla</a>
+            <small class="text-hel-coat">Päättyy</small>
+            <br/>{{ end }}
           </columns>
         </row>
-
-        <spacer size="24"></spacer>
-
-        <h5>Lisäohjeet</h5>
-        <p>{{ extra_content }}</p>
-
-        <callout class="success">
-          <spacer size="12"></spacer>
-          <p class="lead text-center">Ovikoodi: {{ access_code }}</p>
-        </callout>
-
-        <spacer size="24"></spacer>
-
-        <h5>Esteetön kulku tilaan</h5>
-        <p>Sisäänkäynti Moreenitien puolelta. Aulan hissillä kellarikerrokseen.</p>
-
-        <spacer size="24"></spacer>
-
-        <h5>Pohjakuva</h5>
-        <img class="thumbnail" src="{{ resource_ground_plan_url }}">
       </callout>
+
+      <spacer size="48"></spacer>
+
+      <h4>{{ resource }}</h4>
+
+      <row>
+        <columns large="4">
+          <a href="https://varaamotest.hel.ninja/resources/aurrojvupy3q"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
+        </columns>
+        <columns large="1">
+        </columns>
+        <columns large="7">
+          <p class="lead">{{ unit }}</p>
+          <p><strong>{{ department }}</strong><br>
+          {{ unit_street_address }}<br>
+          {{ unit_post_code }}</p>
+          <a href="https://palvelukartta.hel.fi/unit/{{ unit_tprek_id }}#!route-details">Sijainti kartalla</a>
+        </columns>
+      </row>
+
+      <spacer size="24"></spacer>
+
+      <h5>Lisäohjeet</h5>
+      <p>{{ extra_content }}</p>
+
+      <callout class="success">
+        <spacer size="12"></spacer>
+        <h4 class="text-center text-black">Ovikoodi: {{ access_code }}</h4>
+      </callout>
+
+      <spacer size="24"></spacer>
+
+      <h5>Esteetön kulku tilaan</h5>
+      <p>Sisäänkäynti Moreenitien puolelta. Aulan hissillä kellarikerrokseen.</p>
+
+      <spacer size="24"></spacer>
+
+      <h5>Pohjakuva</h5>
+      <img class="thumbnail" src="{{ resource_ground_plan_url }}">
 
 
       <p>
@@ -103,35 +91,3 @@ department: Treenihuoneet (kellari)
     </columns>
   </row>
 </container>
-
-<spacer size="16"></spacer>
-
-<container>
-  <wrapper>
-    <spacer size="16"></spacer>
-    <row>
-      <columns>
-        <p><strong>Varaamo</strong><br>
-        Varaamosta voit varata julkisia tiloja ja laitteita omaan käyttöösi.</p>
-        <p>
-          <a href="https://varaamo.hel.fi">varaamo.hel.fi</a> |
-          <a href="https://varaamo.hel.fi">varaamo.espoo.fi</a> |
-          <a href="https://varaamo.hel.fi">varaamo.vantaa.fi</a>
-        </p>
-      </columns>
-    </row>
-  </wrapper>
-</container>
-<container>
-  <wrapper class="secondary">
-
-    <spacer size="16"></spacer>
-    <row>
-      <columns>
-        <p><small>Tähän viestiin ei voi vastata. Löydät yhteystiedot Varaamon verkkosivuilta. Varaukseen liittyvissä asioissa voit olla yhteydessä tilan tarjoajaan. Palutetta voit lähettää <a href="https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/palaute">täältä</a>.</small></p>
-      </columns>
-    </row>
-  </wrapper>
-</container>
-
-<spacer size="120"></spacer>
