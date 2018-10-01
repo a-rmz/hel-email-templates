@@ -1,0 +1,80 @@
+---
+layout: varaamo
+subject: Varaamo common reservation confirmation
+reserver_name: Nimi Niminen
+event_subject: Käyttäjätestauskokous
+begin: 5. syyskuuta 2018 kello 13.30
+end: 5. syyskuuta 2018 kello 15.30
+resource: Pihlajamäen nuorisotalo, Bändikämppä
+resource_main_image_url: https://api.hel.fi/respa/resource_image/431
+resource_ground_plan_url: https://finna.fi/Cover/Show?id=hkm.HKMS000005:000005i0&fullres=1&index=0
+access_code: 2468
+extra_content: Saavu vastaanottoon ajoissa. Ota vuoronumero ja odota vapautuvaa kassaa. Maksa varausmaksu kassalle ja toimita kuitti varausmaksusta vahtimestarille kolmanteen kerrokseen. Vahtimestarilta saat ovikoodin loppuosan.
+unit: Pihlajamäen nuorisotalo
+unit_street_address: Moreenitie 2
+unit_post_code: 00710 Helsinki
+unit_tprek_id: 20
+department: Treenihuoneet (kellari)
+---
+
+<container>
+
+  <spacer size="12"></spacer>
+
+  <row>
+    <columns small="12">
+      <spacer size="24"></spacer>
+      <p>Hei {{ reserver_name }},</p>
+
+      <p>Alustava varauksesi tilaan <strong>{{ resource }}</strong> on hylätty.</p>
+
+      <p>Hylkäämisen liittyvät perusteet voit tiedustella tästä tilasta vastaavalta
+      henkilökunnalta.</p>
+
+      <spacer size="12"></spacer>
+
+      <callout>
+        <spacer size="12"></spacer>
+        <h4 class="text-hel-brick">Hylätty</h4>
+        <h6 class="text-black">{{ event_subject }}</h6>
+        <row>
+          <columns large="6">
+            <small class="text-hel-brick">Alkaa</small>
+            <br/>{{ begin }}
+          </columns>
+          <columns large="6">
+            <small class="text-hel-brick">Päättyy</small>
+            <br/>{{ end }}
+          </columns>
+        </row>
+      </callout>
+
+      <spacer size="12"></spacer>
+
+      <callout>
+        <spacer size="12"></spacer>
+        <h4>{{ resource }}</h4>
+
+        <row>
+          <columns large="4">
+            <a href="https://varaamotest.hel.ninja/resources/aurrojvupy3q"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
+          </columns>
+          <columns large="1">
+          </columns>
+          <columns large="7">
+            <p class="lead">{{ unit }}</p>
+            <p><strong>{{ department }}</strong><br>
+            {{ unit_street_address }}<br>
+            {{ unit_post_code }}</p>
+            <a href="https://palvelukartta.hel.fi/unit/{{ unit_tprek_id }}#!route-details">Sijainti kartalla</a>
+          </columns>
+        </row>
+      </callout>
+
+      <p>
+      Ystävällisin terveisin,<br>
+      Varaamo
+      </p>
+    </columns>
+  </row>
+</container>
