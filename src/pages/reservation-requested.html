@@ -17,6 +17,8 @@ unit_tprek_id: 20
 department: Treenihuoneet (kellari)
 ---
 
+{{!-- raw --}}
+
 <container>
 
   <spacer size="12"></spacer>
@@ -58,17 +60,17 @@ department: Treenihuoneet (kellari)
         <h4>{{ resource }}</h4>
 
         <row>
+          {{!--{% if resource_main_image_url is defined %}--}}
           <columns large="4">
-            <a href="https://varaamotest.hel.ninja/resources/aurrojvupy3q"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
+            <a href="#"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
           </columns>
+          {{!--{% endif %}--}}
           <columns large="1">
           </columns>
           <columns large="7">
+            {{!--{% if unit is defined %}--}}
             <p class="lead">{{ unit }}</p>
-            <p><strong>{{ department }}</strong><br>
-            {{ unit_street_address }}<br>
-            {{ unit_post_code }}</p>
-            <a href="https://palvelukartta.hel.fi/unit/{{ unit_tprek_id }}#!route-details">Sijainti kartalla</a>
+            {{!--{% endif %}--}}
           </columns>
         </row>
       </callout>
@@ -85,3 +87,5 @@ department: Treenihuoneet (kellari)
     </columns>
   </row>
 </container>
+
+{{!-- /raw --}}

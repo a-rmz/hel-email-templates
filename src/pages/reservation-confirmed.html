@@ -17,6 +17,8 @@ unit_tprek_id: 20
 department: Treenihuoneet (kellari)
 ---
 
+{{!-- raw --}}
+
 <container>
 
   <spacer size="12"></spacer>
@@ -51,39 +53,38 @@ department: Treenihuoneet (kellari)
       <h4>{{ resource }}</h4>
 
       <row>
+        {{!--{% if resource_main_image_url is defined %}--}}
         <columns large="4">
-          <a href="https://varaamotest.hel.ninja/resources/aurrojvupy3q"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
+          <a href="#"><img class="thumbnail" src="{{ resource_main_image_url }}?dim=200x200"></a>
         </columns>
+        {{!--{% endif %}--}}
         <columns large="1">
         </columns>
         <columns large="7">
+          {{!--{% if unit is defined %}--}}
           <p class="lead">{{ unit }}</p>
-          <p><strong>{{ department }}</strong><br>
-          {{ unit_street_address }}<br>
-          {{ unit_post_code }}</p>
-          <a href="https://palvelukartta.hel.fi/unit/{{ unit_tprek_id }}#!route-details">Sijainti kartalla</a>
+          {{!--{% endif %}--}}
         </columns>
       </row>
 
       <spacer size="24"></spacer>
-
+      {{!--{% if extra_content is defined %}--}}
       <h5>Lisäohjeet</h5>
       <p>{{ extra_content }}</p>
+      {{!--{% endif %}--}}
 
+      {{!--{% if access_code is defined %}--}}
       <callout class="success">
         <spacer size="12"></spacer>
         <h4 class="text-center text-black">Ovikoodi: {{ access_code }}</h4>
       </callout>
+      {{!--{% endif %}--}}
 
       <spacer size="24"></spacer>
-
-      <h5>Esteetön kulku tilaan</h5>
-      <p>Sisäänkäynti Moreenitien puolelta. Aulan hissillä kellarikerrokseen.</p>
-
-      <spacer size="24"></spacer>
-
+      {{!--{% if resource_ground_plan_url is defined %}--}}
       <h5>Pohjakuva</h5>
       <img class="thumbnail" src="{{ resource_ground_plan_url }}">
+      {{!--{% endif %}--}}
 
       <p>Varauksen voitte perua viisi päivää ennen varauksen alkua. Varauksen
       peruminen tehdään tilasta vastaavan henkilökunnan kautta. Tarkemmat
@@ -97,3 +98,5 @@ department: Treenihuoneet (kellari)
     </columns>
   </row>
 </container>
+
+{{!-- /raw --}}

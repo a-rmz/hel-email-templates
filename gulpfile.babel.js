@@ -50,8 +50,16 @@ function clean(done) {
 
 // Compile layouts, pages, and partials into flat HTML files
 // Then parse using Inky templates
+
+// Escape handlebars and make handlebar comments visible
+// in PRODUCTION
+
 function pages() {
   return gulp.src(['src/pages/**/*.html', '!src/pages/archive/**/*.html'])
+    .pipe($.if(PRODUCTION, $.replace('{{!-- raw --}}', '{{{{raw}}}}')))
+    .pipe($.if(PRODUCTION, $.replace('{{!-- /raw --}}', '{{{{/raw}}}}')))
+    .pipe($.if(PRODUCTION, $.replace('{{!--', '')))
+    .pipe($.if(PRODUCTION, $.replace('--}}', '')))
     .pipe(panini({
       root: 'src/pages',
       layouts: 'src/layouts',
@@ -126,7 +134,7 @@ function inliner(css) {
       removeLinkTags: false
     })
     .pipe($.replace, '<!-- <style> -->', `<style>${mqCss}</style>`)
-    .pipe($.replace, '<link rel="stylesheet" type="text/css" href="css/app.css">', '')
+    .pipe($.replace, /<link rel="stylesheet" type="text\/css" href="css\/.+\.css">/, '')
     .pipe($.htmlmin, {
       collapseWhitespace: true,
       minifyCSS: true
