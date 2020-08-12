@@ -1,9 +1,6 @@
 @import 'settings';
-
-@import 'helsinki-brand';
-
+@import 'legacy/helsinki-brand';
 $body-background: $hel-coat;
 
 @import 'foundation-emails';
-@import 'template/custom';
-@import 'template/helsinki';
+@import 'legacy/helsinki';

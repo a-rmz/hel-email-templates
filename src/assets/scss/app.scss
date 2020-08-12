@@ -1,7 +1,5 @@
 @import 'settings';
+@import 'legacy/helsinki-brand';
+
 @import 'foundation-emails';
-
-@import 'template/custom';
-
-@import 'helsinki-brand';
-@import 'template/helsinki';
+@import 'legacy/helsinki';

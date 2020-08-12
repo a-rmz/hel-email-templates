@@ -1,6 +1,3 @@
-// These are the styles to make some of the templates look extra nice.
-// Feel free to remove these styles for production!
-
 // Body Styles
 body,
 html,
@@ -65,4 +62,8 @@ html,
 
 .bg-pre {
   background-color: $pre-color;
+}
+
+.hel-logo {
+  max-width: 120px;
 }
