@@ -74,5 +74,7 @@ p {
 }
 
 .rule-thin {
-  border-color: $color-black-10;
+  height: 1px;
+  border: none;
+  background: $color-black-30;
 }
