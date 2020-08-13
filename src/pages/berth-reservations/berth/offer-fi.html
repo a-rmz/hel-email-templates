@@ -5,21 +5,17 @@ dueDate: 15.5.2020
 ---
 
 <container>
-    {{> berth-reservations-header-fi}}
-
-    {{!-- raw --}}
-    <row>
-        <columns>
-            <p>
-                Hyvä asiakas, kiitos hakemuksestasi. Olemme käsitelleet sen ja
-                tarjoamme sinulle alla olevaa venepaikkaa. Jos haluat vastaanottaa
-                sen, maksa se ennen eräpäivää, joka on {{dueDate}}.
-            </p>
-            <h4 style="font-weight: 500;">Tarjottava venepaikka</h4>
-            <p>...</p>
-        </columns>
-    </row>
-    {{!-- /raw --}}
-
-    {{> berth-reservations-footer-fi}}
+  {{> berth-reservations-header-fi}} {{!-- raw --}}
+  <row>
+    <columns>
+      <p>
+        Hyvä asiakas, kiitos hakemuksestasi. Olemme käsitelleet sen ja tarjoamme
+        sinulle alla olevaa venepaikkaa. Jos haluat vastaanottaa sen, maksa se
+        ennen eräpäivää, joka on {{dueDate}}.
+      </p>
+      <h4 style="font-weight: 500;">Tarjottava venepaikka</h4>
+      <p>...</p>
+    </columns>
+  </row>
+  {{!-- /raw --}} {{> berth-reservations-footer-fi}}
 </container>

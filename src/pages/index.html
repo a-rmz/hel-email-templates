@@ -3,68 +3,134 @@ subject: Helsinki Email Templates
 ---
 
 <container>
+  <row>
+    <columns class="header">
+      <img
+        src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg"
+        alt="Helsinki"
+      />
+      <h1>Email Templates</h1>
+      <h2>For Helsinki Open Software Development</h2>
+      <hr class="rule-thick" />
+    </columns>
+  </row>
 
-    <row>
-        <columns class="header">
-            <img src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg" alt="Helsinki"/>
-            <h1>Email Templates</h1>
-            <h2>For Helsinki Open Software Development</h2>
-            <hr class="rule-thick"/>
-        </columns>
-    </row>
+  <row>
+    <columns small="12">
+      <p>
+        HTML email templates for Helsinki applications. Templates use
+        <strong>Foundation for Emails framework</strong> for maximum email app
+        compatibility. They are developed and compiled using Zurb Stack for
+        Foundation. Have a look at Foundation's
+        <a href="http://foundation.zurb.com/emails/docs/">documentation</a> for
+        more information
+      </p>
 
-    <row>
-        <columns small="12">
-            <p>HTML email templates for Helsinki applications. Templates use
-                <strong>Foundation for Emails framework</strong> for maximum email app compatibility. They are developed
-                and compiled using Zurb Stack for Foundation. Have a look at Foundation's <a
-                        href="http://foundation.zurb.com/emails/docs/">documentation</a> for more information
-            </p>
+      <spacer size="24"></spacer>
 
-            <spacer size="24"></spacer>
+      <h3>Helsinki Design System templates</h3>
 
-            <h3>Helsinki Design System templates</h3>
+      <h4>Venepaikat (Berth reservations)</h4>
+      <menu class="vertical">
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/berth/offer-fi.html"
+          >Berth offer (FI)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/berth/application-confirmation-fi.html"
+          >Berth application confirmation (FI)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/berth/application-confirmation-sv.html"
+          >Berth application confirmation (SV)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/berth/application-confirmation-en.html"
+          >Berth application confirmation (EN)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/winter-storage/application-confirmation-fi.html"
+          >Winter storage application confirmation (FI)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/winter-storage/application-confirmation-sv.html"
+          >Winter storage application confirmation (SV)
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}berth-reservations/winter-storage/application-confirmation-en.html"
+          >Winter storage application confirmation (EN)
+        </item>
+      </menu>
+      <br />
 
-            <h4>Berth Reservations</h4>
-            <menu class="vertical">
-                <item style="text-align: left;" href="{{root}}berth-reservations/berth/offer-fi.html">Berth offer (FI)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/berth/application-confirmation-fi.html">Berth application confirmation (FI)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/berth/application-confirmation-sv.html">Berth application confirmation (SV)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/berth/application-confirmation-en.html">Berth application confirmation (EN)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/winter-storage/application-confirmation-fi.html">Winter storage application confirmation (FI)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/winter-storage/application-confirmation-sv.html">Winter storage application confirmation (SV)</item>
-                <item style="text-align: left;" href="{{root}}berth-reservations/winter-storage/application-confirmation-en.html">Winter storage application confirmation (EN)</item>
-            </menu>
-            <br/>
+      <h3>Legacy templates</h3>
 
-            <h3>Legacy templates</h3>
+      <menu class="vertical">
+        <item style="text-align: left;" href="{{root}}styles-preview.html"
+          >Styles preview page</item
+        >
+        <item style="text-align: left;" href="{{root}}cattax.html"
+          >Basic Helsinki template example</item
+        >
+      </menu>
+      <br />
 
-            <menu class="vertical">
-                <item style="text-align: left;" href="{{root}}styles-preview.html">Styles preview page</item>
-                <item style="text-align: left;" href="{{root}}cattax.html">Basic Helsinki template example</item>
-            </menu>
-            <br/>
+      <h4>Varaamo</h4>
+      <menu class="vertical">
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-example.html"
+          >Varaamo reservation created - with all fields [Unbranded]
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-created.html"
+          >Varaamo reservation created [Unbranded]
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-requested.html"
+          >Varaamo reservation requested [Unbranded]
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-cancelled.html"
+          >Varaamo reservation cancelled [Unbranded]
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-denied.html"
+          >Varaamo reservation denied [Unbranded]
+        </item>
+        <item
+          style="text-align: left;"
+          href="{{root}}varaamo/reservation-confirmed.html"
+          >Varaamo reservation confirmed [Unbranded]
+        </item>
+      </menu>
 
-            <h4>Varaamo</h4>
-            <menu class="vertical">
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-example.html">Varaamo reservation created - with all fields [Unbranded]</item>
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-created.html">Varaamo reservation created [Unbranded]</item>
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-requested.html">Varaamo reservation requested [Unbranded]</item>
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-cancelled.html">Varaamo reservation cancelled [Unbranded]</item>
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-denied.html">Varaamo reservation denied [Unbranded]</item>
-                <item style="text-align: left;" href="{{root}}varaamo/reservation-confirmed.html">Varaamo reservation confirmed [Unbranded]</item>
-            </menu>
-
-            <spacer size="24"></spacer>
-
-        </columns>
-    </row>
+      <spacer size="24"></spacer>
+    </columns>
+  </row>
 </container>
 
 <spacer size="24"></spacer>
 
 <center>
-  <small><a style="color: #000000; text-decoration: underline;" href="http://hel.dev.fi/">HEL &lt;3 DEV</a> </small>
+  <small
+    ><a
+      style="color: #000000; text-decoration: underline;"
+      href="http://hel.dev.fi/"
+      >HEL &lt;3 DEV</a
+    ></small
+  >
 </center>
 
 <spacer size="24"></spacer>
