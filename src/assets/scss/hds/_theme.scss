@@ -1,0 +1,64 @@
+@import 'variables';
+
+html * {
+  font-family: $font-default, Helvetica, Arial, sans-serif;
+}
+
+.header {
+  padding-top: $spacing-2-xl;
+
+  img {
+    height: $spacing-2-xl;
+    margin-bottom: $spacing-3-xl;
+    filter: invert(24%) sepia(95%) saturate(2026%) hue-rotate(189deg) brightness(95%) contrast(102%);
+  }
+
+  h1 {
+    font-size: $fontsize-h-2;
+    line-height: $lineheight-s;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: $fontsize-h-3;
+    line-height: $lineheight-s;
+    font-weight: 500;
+  }
+}
+
+.footer {
+  background-color: $color-coat-of-arms-silver;
+
+  img {
+    margin-top: $spacing-3-xl;
+    height: 4rem;
+    margin-bottom: $spacing-xl;
+  }
+
+  p {
+    font-size: $fontsize-body-default;
+
+    &.small {
+      font-size: $fontsize-body-small;
+    }
+  }
+
+  hr {
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
+  }
+}
+
+p {
+  font-size: $fontsize-body-medium;
+}
+
+.rule-thick {
+  height: 5px;
+  border: none;
+  background: $color-coat-of-arms-blue;
+}
+
+.rule-thin {
+  border-color: $color-black-10;
+}
