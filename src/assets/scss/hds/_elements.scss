@@ -1,0 +1,13 @@
+@import 'variables';
+
+.rule-thick {
+  height: 5px;
+  border: none;
+  background: $color-coat-of-arms-blue;
+}
+
+.rule-thin {
+  height: 1px;
+  border: none;
+  background: $color-black-30;
+}
