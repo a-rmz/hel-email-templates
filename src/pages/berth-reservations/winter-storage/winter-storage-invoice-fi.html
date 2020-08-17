@@ -1,14 +1,19 @@
 ---
 layout: berth-reservations
-subject: Nostojärjestyspaikkalasku
+subject: Talvisäilytyspaikkalasku
 lang: fi
 
 dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
 
 invoice: {
   basePrice: "84,00 €",
   winterStorageTotal: "334,08 €",
-  total: "334,08 €"
+  parkingPermit: "30,00 €",
+  total: "364,08 €"
 }
 paymentUrl: '#'
 ---
@@ -22,10 +27,14 @@ paymentUrl: '#'
         Hyvä asiakas, tässä lasku talvisäilytyspaikasta. Voit maksaa sen klikkaamalla "siirry maksamaan" -painiketta
         alempana tässä viestissä.
       </p>
-      <p>
-        Maksettuasi lähetämme sinulle talvisäilytystarran, joka tulee kiinnittää veneeseen näkyvälle paikalle.
-        Tarkastamme talvisäilytysalueelle vietyjen veneiden maksutilanteen. Ilman tarraa tavatulle veneelle voidaan
-        määrätä lisämaksu.
+
+      <h3 class="text-lg" style="margin-bottom: 48px;">Laskun aiheena oleva talvisäilytyspaikka</h3>
+
+      <p style="margin-bottom: 48px;">
+        {{ harborName }}<br/>
+        {{ harborAddress }}<br/>
+        <br/>
+        Paikka: {{ pierIdentifier }} {{ berthNumber }}
       </p>
 
       <h3 class="text-lg" style="margin-bottom: 48px;">Talvisäilytyspaikan hinta</h3>
