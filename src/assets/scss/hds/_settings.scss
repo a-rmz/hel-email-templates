@@ -98,22 +98,22 @@ $stat-font-size: 40px;
 // ---------
 
 $button-padding: (
-        tiny: 4px 8px 4px 8px,
-        small: 5px 10px 5px 10px,
-        default: 8px 16px 8px 16px,
-        large: 10px 20px 10px 20px,
+        tiny: $spacing-2-xs $spacing-xs $spacing-2-xs $spacing-xs,
+        small: $spacing-xs $spacing-s $spacing-xs $spacing-s,
+        default: $spacing-s $spacing-m $spacing-s $spacing-m,
+        large: $spacing-m $spacing-l $spacing-m $spacing-l,
 );
 $button-font-size: (
-        tiny: 10px,
-        small: 12px,
-        default: 16px,
-        large: 20px,
+        tiny: $fontsize-body-s,
+        small: $fontsize-body-m,
+        default: $fontsize-body-l,
+        large: $fontsize-body-xl,
 );
 $button-color: $white;
 $button-color-alt: $medium-gray;
-$button-font-weight: bold;
+$button-font-weight: normal;
 $button-margin: 0 0 $global-margin 0;
-$button-background: $primary-color;
+$button-background: $color-bus;
 $button-border: 2px solid $button-background;
 $button-radius: $global-radius;
 $button-rounded: $global-rounded;

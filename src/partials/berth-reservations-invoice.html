@@ -4,35 +4,35 @@
       <table style="width: 400px; margin: 40px auto;">
         <tr>
           <td class="text-body" colspan="2">Perushinta (3,5 m):</td>
-          <td class="text-body text-right">284,00 €</td>
+          <td class="text-body text-right">{{ basePrice }}</td>
         </tr>
         <tr>
           <td class="text-body">Kiinnitys:</td>
           <td class="text-body text-right">28 %</td>
-          <td class="text-body text-right">79,52 €</td>
+          <td class="text-body text-right">{{ moooring }}</td>
         </tr>
         <tr>
           <td class="text-body">Sähkö:</td>
           <td class="text-body text-right">12 %</td>
-          <td class="text-body text-right">34,08 €</td>
+          <td class="text-body text-right">{{ electricity }}</td>
         </tr>
         <tr>
           <td class="text-body">Vesi:</td>
           <td class="text-body text-right">2 %</td>
-          <td class="text-body text-right">5,68 €</td>
+          <td class="text-body text-right">{{ water }}</td>
         </tr>
         <tr>
           <td class="text-body">Jäte:</td>
           <td class="text-body text-right">8 %</td>
-          <td class="text-body text-right">22,72 €</td>
+          <td class="text-body text-right">{{ wasteManagement }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Portti:</td>
-          <td class="text-body text-right">4,00 €</td>
+          <td class="text-body text-right">{{ gate }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Valaistus:</td>
-          <td class="text-body text-right">10,00 €</td>
+          <td class="text-body text-right">{{ lighting }}</td>
         </tr>
         <tr>
           <td colspan="3">
@@ -41,14 +41,14 @@
         </tr>
         <tr>
           <td class="text-body" colspan="2">Venepaikka yhteensä:</td>
-          <td class="text-body text-right">365,77 €</td>
+          <td class="text-body text-right">{{ berthTotal }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="3">Lisäpalvelut:</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Pysäköintilupa:</td>
-          <td class="text-body text-right">75,00 €</td>
+          <td class="text-body text-right">{{ parkingPermit }}</td>
         </tr>
         <tr>
           <td colspan="3">
@@ -57,7 +57,7 @@
         </tr>
         <tr>
           <td class="text-body" colspan="2">YHTEENSÄ:</td>
-          <td class="text-body text-right">440,77 € / vuosi</td>
+          <td class="text-body text-right">{{ total }} / vuosi</td>
         </tr>
         <tr>
           <td colspan="3">
