@@ -28,16 +28,16 @@ paymentUrl: '#'
         alempana tässä viestissä.
       </p>
 
-      <h3 class="text-lg" style="margin-bottom: 48px;">Laskun aiheena oleva talvisäilytyspaikka</h3>
+      <h3 class="text-lg">Laskun aiheena oleva talvisäilytyspaikka</h3>
 
-      <p style="margin-bottom: 48px;">
+      <p>
         {{ harborName }}<br/>
         {{ harborAddress }}<br/>
         <br/>
         Paikka: {{ pierIdentifier }} {{ berthNumber }}
       </p>
 
-      <h3 class="text-lg" style="margin-bottom: 48px;">Talvisäilytyspaikan hinta</h3>
+      <h3 class="text-lg">Talvisäilytyspaikan hinta</h3>
 
       {{# with invoice }}
       {{> berth-reservations-winter-storage-invoice }}
@@ -53,7 +53,7 @@ paymentUrl: '#'
 
             <button class="expanded" href="{{ paymentUrl }}">Siirry maksamaan {{ invoice.total }} &rarr;</button>
 
-            <p class="text-body">
+            <p class="text-body" style="margin-bottom: 0;">
               Huomaathan, että laskun voi maksaa vain tämän linkin kautta. Muulla
               tavoin maksettuja maksuja ei voida ottaa vastaan. Lisätietoja
               asiakaspalvelustamme venepaikat@hel.fi.
