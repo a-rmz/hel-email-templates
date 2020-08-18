@@ -51,7 +51,7 @@ function clean(done) {
 // Compile layouts, pages, and partials into flat HTML files
 // Then parse using Inky templates
 function pages() {
-  return gulp.src(['src/pages/**/*.html', '!src/pages/archive/**/*.html'])
+  return gulp.src('src/pages/**/*.html')
     .pipe($.if(PRODUCTION, $.replace('{{!-- raw --}}', '{{{{raw}}}}')))
     .pipe($.if(PRODUCTION, $.replace('{{!-- /raw --}}', '{{{{/raw}}}}')))
     .pipe($.if(PRODUCTION, $.replace('{{!--', '')))

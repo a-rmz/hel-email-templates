@@ -4,35 +4,35 @@
       <table style="width: 400px; margin: 40px auto;">
         <tr>
           <td class="text-body" colspan="2">Perushinta (3,5 m):</td>
-          <td class="text-body text-right">{{ basePrice }}</td>
+          <td class="text-body text-right">{{ field 'invoice.basePrice' }}</td>
         </tr>
         <tr>
           <td class="text-body">Kiinnitys:</td>
           <td class="text-body text-right">28 %</td>
-          <td class="text-body text-right">{{ moooring }}</td>
+          <td class="text-body text-right">{{ field 'invoice.mooring' }}</td>
         </tr>
         <tr>
           <td class="text-body">Sähkö:</td>
           <td class="text-body text-right">12 %</td>
-          <td class="text-body text-right">{{ electricity }}</td>
+          <td class="text-body text-right">{{ field 'invoice.electricity' }}</td>
         </tr>
         <tr>
           <td class="text-body">Vesi:</td>
           <td class="text-body text-right">2 %</td>
-          <td class="text-body text-right">{{ water }}</td>
+          <td class="text-body text-right">{{ field 'invoice.water' }}</td>
         </tr>
         <tr>
           <td class="text-body">Jäte:</td>
           <td class="text-body text-right">8 %</td>
-          <td class="text-body text-right">{{ wasteManagement }}</td>
+          <td class="text-body text-right">{{ field 'invoice.wasteManagement' }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Portti:</td>
-          <td class="text-body text-right">{{ gate }}</td>
+          <td class="text-body text-right">{{ field 'invoice.gate' }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Valaistus:</td>
-          <td class="text-body text-right">{{ lighting }}</td>
+          <td class="text-body text-right">{{ field 'invoice.lighting' }}</td>
         </tr>
         <tr>
           <td colspan="3">
@@ -41,14 +41,14 @@
         </tr>
         <tr>
           <td class="text-body" colspan="2">Venepaikka yhteensä:</td>
-          <td class="text-body text-right">{{ berthTotal }}</td>
+          <td class="text-body text-right">{{ field 'invoice.berthTotal' }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="3">Lisäpalvelut:</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">Pysäköintilupa:</td>
-          <td class="text-body text-right">{{ parkingPermit }}</td>
+          <td class="text-body text-right">{{ field 'invoice.parkingPermit' }}</td>
         </tr>
         <tr>
           <td colspan="3">
@@ -57,7 +57,7 @@
         </tr>
         <tr>
           <td class="text-body" colspan="2">YHTEENSÄ:</td>
-          <td class="text-body text-right">{{ total }} / vuosi</td>
+          <td class="text-body text-right">{{ field 'invoice.total' }} / vuosi</td>
         </tr>
         <tr>
           <td colspan="3">

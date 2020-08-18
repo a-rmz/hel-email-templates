@@ -7,22 +7,18 @@ dueDate: 15.5.2020
 harborName: "Aurinkolahden venesatama"
 pierIdentifier: A
 berthNumber: 1
-
 harborImage: "https://venepaikka-api.test.hel.ninja/media/harbors/bf5a852a-f79a-4afe-b5ad-5d01e52e7bc3/42276.jpg"
 harborAddress: "Aurinkoranta 1, 00990 Helsinki"
 harborWebAddress: ""
 harborMap: ""
-
 wasteManagement: true
 gate: true
 electricity: true
 lighting: true
 water: true
-
 width: "5,0 m"
 length: "3,5 m"
 mooringType: Peräpoiju
-
 invoice: {
   basePrice: "284,00 €",
   mooring: "79,52 €",
@@ -44,13 +40,11 @@ cancelUrl: '#'
 
   <row style="margin-bottom: 72px;">
     <columns>
-      {{!-- raw --}}
       <p>
         Hyvä asiakas, kiitos hakemuksestasi. Olemme käsitelleet sen ja tarjoamme
         sinulle alla olevaa venepaikkaa. Jos haluat vastaanottaa sen, ilmoita siitä meille viestin lopussa olevalla
         linkillä.
       </p>
-      {{!-- /raw --}}
 
       <h3 class="text-lg">Tarjottava venepaikka</h3>
 
@@ -58,11 +52,8 @@ cancelUrl: '#'
 
       <h3 class="text-lg">Venepaikan hinta</h3>
 
-      {{# with invoice }}
       {{> berth-reservations-berth-invoice }}
-      {{/ with }}
 
-      {{!-- raw --}}
       <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
         <tr>
           <td style="padding: 48px;">
@@ -75,7 +66,7 @@ cancelUrl: '#'
               2. Ilmoita meille että otat vaihtopaikan vastaan tämän linkin kautta:
             </p>
 
-            <button class="expanded" href="{{ acceptUrl }}">Kiitos, vaihdan tarjottuun paikkaan &rarr;</button>
+            <button class="expanded" href="{{ field 'acceptUrl' }}">Kiitos, vaihdan tarjottuun paikkaan &rarr;</button>
 
             <p class="text-body">
               Huomaathan, että jos vastaanotat vaihtopaikan, nykyinen paikkasi vapautuu. Emme peri tai hyvitä vaihdosta
@@ -84,7 +75,7 @@ cancelUrl: '#'
             <b>Jos et halua vastaanottaa vaihtopaikkaa, mutta haluat, että hakemuksesi pysyy voimassa:</b>
             <p>1. Ilmoita meille siitä tämän linkin kautta:</p>
 
-            <button class="expanded secondary" href="{{ cancelUrl }}">Ei kiitos, en halua tätä venepaikkaa &rarr;
+            <button class="expanded secondary" href="{{ field 'cancelUrl' }}">Ei kiitos, en halua tätä venepaikkaa &rarr;
             </button>
 
             <p class="text-body" style="margin-bottom: 0;">
@@ -94,7 +85,6 @@ cancelUrl: '#'
           </td>
         </tr>
       </table>
-      {{!-- /raw --}}
 
       {{> berth-reservations-info-section }}
 

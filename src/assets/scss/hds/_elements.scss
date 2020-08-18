@@ -30,3 +30,8 @@ table.button.secondary {
     }
   }
 }
+
+.img-ml {
+  max-width: calc(100% - #{$spacing-m});
+  margin-right: $spacing-m;
+}

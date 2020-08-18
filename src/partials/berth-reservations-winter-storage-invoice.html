@@ -4,34 +4,34 @@
       <table style="width: 400px; margin: 40px auto;">
         <tr>
           <td class="text-body">Perushinta (3,5 m):</td>
-          <td class="text-body text-right">{{ basePrice }}</td>
+          <td class="text-body text-right">{{ field 'invoice.basePrice' }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">&nbsp;</td>
         </tr>
         <tr>
           <td class="text-body">Talvisäilytyspaikka yhteensä:</td>
-          <td class="text-body text-right">{{ winterStorageTotal }}</td>
+          <td class="text-body text-right">{{ field 'invoice.winterStorageTotal' }}</td>
         </tr>
         <tr>
           <td colspan="2">
             <hr class="rule-thin"/>
           </td>
         </tr>
-        {{# if parkingPermit }}
-          <tr>
-            <td class="text-body">Pysäköintilupa:</td>
-            <td class="text-body text-right">{{ parkingPermit }}</td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <hr class="rule-thin"/>
-            </td>
-          </tr>
-        {{/ if }}
+        {{# rif 'parkingPermit' }}
+        <tr>
+          <td class="text-body">Pysäköintilupa:</td>
+          <td class="text-body text-right">{{ field 'invoice.parkingPermit' }}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr class="rule-thin"/>
+          </td>
+        </tr>
+        {{/ rif }}
         <tr>
           <td class="text-body">YHTEENSÄ:</td>
-          <td class="text-body text-right">{{ total }} / vuosi</td>
+          <td class="text-body text-right">{{ field 'invoice.total' }} / vuosi</td>
         </tr>
         <tr>
           <td colspan="2">

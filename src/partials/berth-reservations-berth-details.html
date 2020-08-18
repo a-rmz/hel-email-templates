@@ -1,30 +1,30 @@
 <row>
-  <columns large="5" style="padding-bottom: 20px; padding-right: 20px !important;">
+  <columns large="5">
     {{# ifeq lang "fi" }}
-    <img src="{{ harborImage }}" alt="Sataman kuva"/>
+    <img src="{{ field 'harborImage' }}" alt="Sataman kuva" class="img-ml"/>
     {{/ ifeq }}
     {{# ifeq lang "sv" }}
-    <img src="{{ harborImage }}" alt="Hamnbild"/>
+    <img src="{{ field 'harborImage' }}" alt="Hamnbild" class="img-ml"/>
     {{/ ifeq }}
     {{# ifeq lang "en" }}
-    <img src="{{ harborImage }}" alt="Harbor image"/>
+    <img src="{{ field 'harborImage' }}" alt="Harbor image" class="img-ml"/>
     {{/ ifeq }}
   </columns>
 
-  <columns large="7" style="padding-bottom: 20px">
-    <h3 style="margin-top: 4px !important;" class="mb-0">{{ harborName }}</h3>
+  <columns large="7">
+    <h3 style="margin-top: 4px !important;" class="mb-0">{{ field 'harborName' }}</h3>
     <p style="margin-bottom: 16px;" class="text-body">
-      {{ harborAddress }}
+      {{ field 'harborAddress' }}
     </p>
     <p style="margin-bottom: 12px;" class="text-sm">
-      <a href="{{ harborWebAddress }}">
+      <a href="{{ field 'harborWebAddress' }}">
         {{# ifeq lang "fi" }}Toimipisteen nettisivut{{/ ifeq }}
         {{# ifeq lang "sv" }}Webbplats{{/ ifeq }}
         {{# ifeq lang "en" }}Website{{/ ifeq }}
       </a>
     </p>
     <p class="text-sm">
-      <a href="{{ harborMap }}">
+      <a href="{{ field 'harborMap' }}">
         {{# ifeq lang "fi" }}Satamakartta (PDF){{/ ifeq }}
         {{# ifeq lang "sv" }}Hamnkartan (PDF){{/ ifeq }}
         {{# ifeq lang "en" }}Harbor map (PDF){{/ ifeq }}
@@ -36,7 +36,7 @@
   <columns>
     <table style="width: auto; table-layout: fixed;">
       <tr>
-        {{# if wasteManagement }}
+        {{# rif 'wasteManagement' }}
         <th class="property">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd">
@@ -51,8 +51,8 @@
           {{# ifeq lang "sv" }}Avfallshantering{{/ ifeq }}
           {{# ifeq lang "en" }}Waste management{{/ ifeq }}
         </th>
-        {{/ if }}
-        {{# if gate }}
+        {{/ rif }}
+        {{# rif 'gate' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +68,8 @@
           {{# ifeq lang "sv" }}Port{{/ ifeq }}
           {{# ifeq lang "en" }}Gate{{/ ifeq }}
         </th>
-        {{/ if }}
-        {{# if electricity }}
+        {{/ rif }}
+        {{# rif 'electricity' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,8 @@
           {{# ifeq lang "sv" }}El{{/ ifeq }}
           {{# ifeq lang "en" }}Electricity{{/ ifeq }}
         </th>
-        {{/ if }}
-        {{# if lighting }}
+        {{/ rif }}
+        {{# rif 'lighting' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,8 +106,8 @@
           {{# ifeq lang "sv" }}Belysning{{/ ifeq }}
           {{# ifeq lang "en" }}Lighting{{/ ifeq }}
         </th>
-        {{/ if }}
-        {{# if water }}
+        {{/ rif }}
+        {{# rif 'water' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@
           {{# ifeq lang "sv" }}Vatten{{/ ifeq }}
           {{# ifeq lang "en" }}Water{{/ ifeq }}
         </th>
-        {{/ if }}
+        {{/ rif }}
       </tr>
     </table>
   </columns>
@@ -135,13 +135,13 @@
     {{# ifeq lang "sv" }}Kaj:{{/ ifeq }}
     {{# ifeq lang "en" }}Pier:{{/ ifeq }}
   </p></columns>
-  <columns large="4" class="pb-0"><p class="text-bold">{{ pierIdentifier }}</p></columns>
+  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'pierIdentifier' }}</p></columns>
   <columns large="2" class="pb-0"><p class="text-bold">
     {{# ifeq lang "fi" }}Paikka:{{/ ifeq }}
     {{# ifeq lang "sv" }}Plats:{{/ ifeq }}
     {{# ifeq lang "en" }}Berth:{{/ ifeq }}
   </p></columns>
-  <columns large="4" class="pb-0"><p class="text-bold">{{ berthNumber }}</p></columns>
+  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'berthNumber' }}</p></columns>
 </row>
 
 <row>
@@ -153,7 +153,7 @@
           {{# ifeq lang "sv" }}Bredd:{{/ ifeq }}
           {{# ifeq lang "en" }}Width:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ width }}</td>
+        <td style="width: 60%;">{{ field 'width' }}</td>
       </tr>
       <tr>
         <td style="width: 40%;">
@@ -161,7 +161,7 @@
           {{# ifeq lang "sv" }}Längd:{{/ ifeq }}
           {{# ifeq lang "en" }}Length:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ length }}</td>
+        <td style="width: 60%;">{{ field 'length' }}</td>
       </tr>
       <tr>
         <td style="width: 40%;">
@@ -169,7 +169,7 @@
           {{# ifeq lang "sv" }}Förtöjning:{{/ ifeq }}
           {{# ifeq lang "en" }}Mooring type:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ mooringType }}</td>
+        <td style="width: 60%;">{{ field 'mooringType' }}</td>
       </tr>
     </table>
   </columns>
