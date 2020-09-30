@@ -1,0 +1,74 @@
+---
+layout: berth-reservations
+subject: Båtplatsfaktura
+lang: sv
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+invoice: {
+  basePrice: "284,00 €",
+  mooring: "79,52 €",
+  electricity: "34,08 €",
+  water: "5,68 €",
+  wasteManagement: "22,72 €",
+  gate: "4,00 €",
+  lighting: "10,00 €",
+  berthTotal: "365,77 €",
+  parkingPermit: "75,00 €",
+  total: "440,77 €",
+}
+paymentUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Bästa kund, här är en faktura för din båtplats. Du kan betala den genom att klicka
+        på "Betala" längre ner i meddelandet.
+      </p>
+
+      <h3 class="text-lg">Båtplats som fakturan gäller</h3>
+
+      <p>
+        {{ field 'harborName' }}<br/>
+        {{ field 'harborAddress' }}<br/>
+        <br/>
+        Plats: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+      </p>
+
+      <h3 class="text-lg">Båtplatsens pris</h3>
+
+      {{> berth-reservations-berth-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <p>
+              Betala fakturan via denna länk före förfallodatumet {{ field 'dueDate' }}:
+            </p>
+
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Betala {{ field 'invoice.total' }} &rarr;</button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Observera att fakturan kan betalas endast via denna länk. Betalningar som gjorts på
+              annat sätt tas inte emot. För mer information, kontakta vår kundtjänst via
+              venepaikat@hel.fi.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>

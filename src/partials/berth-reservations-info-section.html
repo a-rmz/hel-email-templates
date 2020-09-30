@@ -1,15 +1,28 @@
 <row>
   <columns>
     <p>
-      Helsingin kaupungin venepaikat vuokrataan asiakkaille toistaiseksi
+      {{# ifeq lang "fi" }}Helsingin kaupungin venepaikat vuokrataan asiakkaille toistaiseksi
       voimassa olevina ja niistä peritään vuosittain kulloinkin voimassa
       olevan hinnaston mukainen maksu. Jos laskua ei maksa eräpäivään
       mennessä, vuokrasopimus irtisanoutuu automaattisesti. Veneilykausi on
-      10.6.-14.9., jona aikana venepaikalla saa pitää venettä.
+      10.6.-14.9., jona aikana venepaikalla saa pitää venettä.{{/ ifeq }}
+      {{# ifeq lang "sv" }}Helsingfors stads båtplatser hyrs ut till kunder tills vidare, och för dem
+      debiteras en årlig avgift enligt den gällande prislistan. Om fakturan inte betalas
+      senast på förfallodagen sägs hyresavtalet upp automatiskt. Båten får förvaras på
+      båtplatsen under båtsäsongen, som varar under perioden 10.6–14.9.{{/ ifeq }}
+      {{# ifeq lang "en" }}The City of Helsinki’s boat berths are leased out to customers until further
+      notice, and an annual fee is charged for them in accordance with the currently
+      valid price list. If the invoice is not paid by the due date, the lease is
+      terminated automatically. The boating season is from 10 June to 14 September,
+      during which boats are allowed to be kept at berths{{/ ifeq }}
     </p>
     <p>
-      Venepaikan vastaanottaminen edellyttää voimassa olevien venepaikan
-      vuokrasopimusehtojen sekä venesatamasääntöjen hyväksymistä.
+      {{# ifeq lang "fi" }}Venepaikan vastaanottaminen edellyttää voimassa olevien venepaikan
+      vuokrasopimusehtojen sekä venesatamasääntöjen hyväksymistä.{{/ ifeq }}
+      {{# ifeq lang "sv" }}För att ta emot en båtplats måste du godkänna de gällande hyresavtalsvillkoren för
+      båtplatser och båthamnens regler.{{/ ifeq }}
+      {{# ifeq lang "en" }}In order to reserve a boat berth, the current boat berth lease agreement terms and
+      the harbour rules must be accepted.{{/ ifeq }}
     </p>
   </columns>
 </row>

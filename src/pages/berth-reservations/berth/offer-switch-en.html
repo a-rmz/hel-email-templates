@@ -1,0 +1,99 @@
+---
+layout: berth-reservations
+subject: Boat berth change offer
+lang: en
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborImage: "https://venepaikka-api.test.hel.ninja/media/harbors/bf5a852a-f79a-4afe-b5ad-5d01e52e7bc3/42276.jpg"
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+harborWebAddress: ""
+harborMap: ""
+wasteManagement: true
+gate: true
+electricity: true
+lighting: true
+water: true
+width: "5,0 m"
+length: "3,5 m"
+mooringType: Peräpoiju
+invoice: {
+  basePrice: "284,00 €",
+  mooring: "79,52 €",
+  electricity: "34,08 €",
+  water: "5,68 €",
+  wasteManagement: "22,72 €",
+  gate: "4,00 €",
+  lighting: "10,00 €",
+  berthTotal: "365,77 €",
+  parkingPermit: "75,00 €",
+  total: "440,77 €",
+}
+acceptUrl: '#'
+cancelUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Dear customer, thank you for your application. We have processed it and we would
+        now like to offer you the boat berth specified below. If you wish to accept it,
+        please notify us via the link at the end of this message.
+      </p>
+
+      <h3 class="text-lg">Boat berth offered</h3>
+
+      {{> berth-reservations-berth-details }}
+
+      <h3 class="text-lg">Price of the boat berth</h3>
+
+      {{> berth-reservations-berth-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <b>If you accept the boat berth change offered, please:</b>
+            <p>
+              1. Read the attached boat berth lease agreement terms and the harbour rules
+            </p>
+            <p>
+              2. Notify us that you accept the boat berth change offered via this link:
+            </p>
+
+            <button class="expanded" href="{{ field 'acceptUrl' }}">Thank you, I wish to change my boat berth to the berth offered &rarr;</button>
+
+            <p class="text-body">
+              Please note that if you accept the change, your current berth will become vacant.
+              We will not charge for or reimburse the price difference if you change to a berth
+              of a different size. For more information, please contact our customer service
+              department at venepaikat@hel.fi.
+            </p>
+            <b>If you do not wish to accept the boat berth change offered but want your
+              application to remain valid:</b>
+            <p>1. Notify us via this link:</p>
+
+            <button class="expanded secondary" href="{{ field 'cancelUrl' }}">No thank you, I do not wish to reserve this boat berth &rarr;
+            </button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Please note that if you choose not to accept the berth change offered, you will
+              keep your current boat berth. Your application will remain in the queue so that we
+              can try to offer you a berth the next time berths are assigned.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>

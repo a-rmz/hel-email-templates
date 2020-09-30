@@ -3,14 +3,23 @@
     <td>
       <table style="width: 400px; margin: 40px auto;">
         <tr>
-          <td class="text-body">Perushinta (3,5 m):</td>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Perushinta{{/ ifeq }}
+            {{# ifeq lang "sv" }}Grundavgift{{/ ifeq }}
+            {{# ifeq lang "en" }}Basic price{{/ ifeq }}
+            (3,5 m):
+          </td>
           <td class="text-body text-right">{{ field 'invoice.basePrice' }}</td>
         </tr>
         <tr>
           <td class="text-body" colspan="2">&nbsp;</td>
         </tr>
         <tr>
-          <td class="text-body">Talvisäilytyspaikka yhteensä:</td>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Talvisäilytyspaikka yhteensä:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Vinteruppläggningsplats totalt:{{/ ifeq }}
+            {{# ifeq lang "en" }}Winter storage place in total:{{/ ifeq }}
+          </td>
           <td class="text-body text-right">{{ field 'invoice.winterStorageTotal' }}</td>
         </tr>
         <tr>
@@ -20,7 +29,11 @@
         </tr>
         {{# rif 'parkingPermit' }}
         <tr>
-          <td class="text-body">Pysäköintilupa:</td>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Pysäköintilupa:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Parkeringstillstånd:{{/ ifeq }}
+            {{# ifeq lang "en" }}Parking permit:{{/ ifeq }}
+          </td>
           <td class="text-body text-right">{{ field 'invoice.parkingPermit' }}</td>
         </tr>
         <tr>
@@ -30,13 +43,25 @@
         </tr>
         {{/ rif }}
         <tr>
-          <td class="text-body">YHTEENSÄ:</td>
-          <td class="text-body text-right">{{ field 'invoice.total' }} / vuosi</td>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}YHTEENSÄ:{{/ ifeq }}
+            {{# ifeq lang "sv" }}TOTALT:{{/ ifeq }}
+            {{# ifeq lang "en" }}TOTAL:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.total' }} /
+            {{# ifeq lang "fi" }}vuosi{{/ ifeq }}
+            {{# ifeq lang "sv" }}år{{/ ifeq }}
+            {{# ifeq lang "en" }}year{{/ ifeq }}
+          </td>
         </tr>
         <tr>
           <td colspan="2">
             <p class="text-sm mb-0" style="margin-top: 16px;">
-              <a href="">Liikuntapalvelujen hinnasto</a>
+              <a href="">
+                {{# ifeq lang "fi" }}Liikuntapalvelujen hinnasto{{/ ifeq }}
+                {{# ifeq lang "sv" }}Idrottsservicens prislista{{/ ifeq }}
+                {{# ifeq lang "en" }}Price list for sports services{{/ ifeq }}
+              </a>
             </p>
           </td>
         </tr>
