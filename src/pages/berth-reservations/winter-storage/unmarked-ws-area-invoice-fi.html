@@ -9,7 +9,7 @@ invoice: {
   winterStorageTotal: "334,08 €",
   total: "334,08 €"
 }
-paymentUrl: '#'
+payment_url: '#'
 ---
 
 <container>
@@ -35,10 +35,10 @@ paymentUrl: '#'
         <tr>
           <td style="padding: 48px;">
             <p>
-              Maksa lasku tämän linkin kautta ennen eräpäivää {{ field 'dueDate' }}:
+              Maksa lasku tämän linkin kautta ennen eräpäivää {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Siirry maksamaan {{ field 'invoice.total' }} &rarr;</button>
+            <button class="expanded" href="{{ field 'payment_url' }}">Siirry maksamaan {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Huomaathan, että laskun voi maksaa vain tämän linkin kautta. Muulla

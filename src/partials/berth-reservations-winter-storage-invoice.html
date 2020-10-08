@@ -3,52 +3,50 @@
     <td>
       <table style="width: 400px; margin: 40px auto;">
         <tr>
-          <td class="text-body">
+          <td class="text-body" colspan="2">
             {{# ifeq lang "fi" }}Perushinta{{/ ifeq }}
             {{# ifeq lang "sv" }}Grundavgift{{/ ifeq }}
             {{# ifeq lang "en" }}Basic price{{/ ifeq }}
-            (3,5 m):
+            / m<sup>2</sup>:
           </td>
-          <td class="text-body text-right">{{ field 'invoice.basePrice' }}</td>
-        </tr>
-        <tr>
-          <td class="text-body" colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td class="text-body">
-            {{# ifeq lang "fi" }}Talvisäilytyspaikka yhteensä:{{/ ifeq }}
-            {{# ifeq lang "sv" }}Vinteruppläggningsplats totalt:{{/ ifeq }}
-            {{# ifeq lang "en" }}Winter storage place in total:{{/ ifeq }}
-          </td>
-          <td class="text-body text-right">{{ field 'invoice.winterStorageTotal' }}</td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <hr class="rule-thin"/>
-          </td>
-        </tr>
-        {{# rif 'parkingPermit' }}
-        <tr>
-          <td class="text-body">
-            {{# ifeq lang "fi" }}Pysäköintilupa:{{/ ifeq }}
-            {{# ifeq lang "sv" }}Parkeringstillstånd:{{/ ifeq }}
-            {{# ifeq lang "en" }}Parking permit:{{/ ifeq }}
-          </td>
-          <td class="text-body text-right">{{ field 'invoice.parkingPermit' }}</td>
+          <td class="text-body text-right">{{ field 'order.product.price_value' }}&euro;</td>
         </tr>
         <tr>
           <td colspan="3">
             <hr class="rule-thin"/>
           </td>
         </tr>
-        {{/ rif }}
         <tr>
-          <td class="text-body">
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Talvisäilytyspaikka yhteensä:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Vinteruppläggningsplats totalt:{{/ ifeq }}
+            {{# ifeq lang "en" }}Winter storage place in total:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'order.fixed_price_total' }}&euro;</td>
+        </tr>
+        {% if optional_services %}
+        <tr>
+          <td class="text-body" colspan="3">Lisäpalvelut:</td>
+        </tr>
+        {% endif %}
+        {% for order_line in optional_services %}
+        <tr>
+          <td class="text-body" colspan="2">{{ field 'order_line.product.get_service_display()' }}:</td>
+          <td class="text-body text-right">{{ field 'order_line.price' }}&euro;</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td colspan="3">
+            <hr class="rule-thin"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
             {{# ifeq lang "fi" }}YHTEENSÄ:{{/ ifeq }}
             {{# ifeq lang "sv" }}TOTALT:{{/ ifeq }}
             {{# ifeq lang "en" }}TOTAL:{{/ ifeq }}
           </td>
-          <td class="text-body text-right">{{ field 'invoice.total' }} /
+          <td class="text-body text-right">{{ field 'order.total_price' }} /
             {{# ifeq lang "fi" }}vuosi{{/ ifeq }}
             {{# ifeq lang "sv" }}år{{/ ifeq }}
             {{# ifeq lang "en" }}year{{/ ifeq }}

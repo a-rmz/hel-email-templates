@@ -3,18 +3,8 @@ layout: berth-reservations
 subject: Winter storage place invoice
 lang: en
 
-dueDate: 15.5.2020
-harborName: "Aurinkolahden venesatama"
-pierIdentifier: A
-berthNumber: 1
-harborAddress: "Aurinkoranta 1, 00990 Helsinki"
-invoice: {
-  basePrice: "84,00 €",
-  winterStorageTotal: "334,08 €",
-  parkingPermit: "30,00 €",
-  total: "364,08 €"
-}
-paymentUrl: '#'
+due_date: 15.5.2020
+payment_url: '#'
 ---
 
 <container>
@@ -30,10 +20,10 @@ paymentUrl: '#'
       <h3 class="text-lg">Winter storage place that the invoice concerns</h3>
 
       <p>
-        {{ field 'harborName' }}<br/>
-        {{ field 'harborAddress' }}<br/>
+        {{ field 'order.lease.place.winter_storage_section.area.name' }}<br/>
+        {{ field 'order.lease.place.winter_storage_section.area.street_address' }}<br/>
         <br/>
-        Place: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+        Place: {{ field 'order.lease.place.winter_storage_section.identifier' }} {{ field 'order.lease.place.number' }}
       </p>
 
       <h3 class="text-lg">Price of the winter storage place</h3>
@@ -44,10 +34,10 @@ paymentUrl: '#'
         <tr>
           <td style="padding: 48px;">
             <p>
-              Please pay the invoice via this link before the due date {{ field 'dueDate' }}:
+              Please pay the invoice via this link before the due date {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'invoice.total' }} &rarr;</button>
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Please note that you can only pay the invoice via this link. We cannot accept

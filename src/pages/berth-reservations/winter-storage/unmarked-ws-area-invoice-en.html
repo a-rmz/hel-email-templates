@@ -1,7 +1,7 @@
 ---
 layout: berth-reservations
 subject: Unmarked winter storage invoice
-lang: fi
+lang: en
 
 dueDate: 15.5.2020
 invoice: {
@@ -9,7 +9,7 @@ invoice: {
   winterStorageTotal: "334,08 €",
   total: "334,08 €"
 }
-paymentUrl: '#'
+payment_url: '#'
 ---
 
 <container>
@@ -36,10 +36,10 @@ paymentUrl: '#'
         <tr>
           <td style="padding: 48px;">
             <p>
-              Please pay the invoice via this link before the due date {{ field 'dueDate' }}:
+              Please pay the invoice via this link before the due date {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'invoice.total' }} &rarr;</button>
+            <button class="expanded" href="{{ field 'payment_url' }}">Make your payment {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Please note that you can only pay the invoice via this link. We cannot accept

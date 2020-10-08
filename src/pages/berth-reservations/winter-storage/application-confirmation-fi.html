@@ -9,7 +9,7 @@ lang: fi
   {{> berth-reservations-header}} {{!-- raw --}}
   <row>
     <columns small="12">
-      <h4>Hei {{ reservation.first_name }}!</h4>
+      <h4>Hei {{ application.first_name }}!</h4>
 
       <p>Kiitos, hakemuksesi on vastaanotettu.</p>
 
@@ -29,10 +29,10 @@ lang: fi
         <b>Aika</b>
         {{ created_at }}<br />
         <b>Hakija</b>
-        {{ reservation.first_name }} {{ reservation.last_name }}<br />
-        {{!--{% if reservation.company_name %}--}}
+        {{ application.first_name }} {{ application.last_name }}<br />
+        {{!--{% if application.company_name %}--}}
         <b>Yritys</b>
-        {{ reservation.company_name }} ({{ reservation.business_id }})<br />
+        {{ application.company_name }} ({{ application.business_id }})<br />
         {{!--{% endif %}--}}
         <spacer size="24"></spacer>
         <table class="hr">
@@ -52,8 +52,8 @@ lang: fi
             {{!--{% endfor %}--}}
           </tbody>
         </table>
-        {{!--{% if reservation.application_code %}--}}
-        <p><b>Hakukoodi:</b> {{reservation.application_code}}</p>
+        {{!--{% if application.application_code %}--}}
+        <p><b>Hakukoodi:</b> {{application.application_code}}</p>
         {{!--{% endif %}--}}
         <spacer size="24"></spacer>
         <table class="hr">
@@ -63,26 +63,26 @@ lang: fi
         </table>
         <spacer size="12"></spacer>
         <h5>Veneen tiedot</h5>
-        {{!--{% if reservation.boat_registration_number %}--}}
+        {{!--{% if application.boat_registration_number %}--}}
         <row class="collapse">
           <columns large="4"><b>Rekisterinumero</b></columns>
           <columns large="8"
-            >{{ reservation.boat_registration_number }}</columns
+            >{{ application.boat_registration_number }}</columns
           >
         </row>
-        {{!--{% endif %}--}} {{!--{% if reservation.boat_name %}--}}
+        {{!--{% endif %}--}} {{!--{% if application.boat_name %}--}}
         <row class="collapse">
           <columns large="2"><b>Nimi</b></columns>
-          <columns large="4">{{ reservation.boat_name }}</columns>
+          <columns large="4">{{ application.boat_name }}</columns>
           <columns large="2"><b>Malli</b></columns>
-          <columns large="4">{{ reservation.boat_model }}</columns>
+          <columns large="4">{{ application.boat_model }}</columns>
         </row>
         {{!--{% endif %}--}}
         <row class="collapse">
           <columns large="2" small="6"><b>Pituus</b></columns>
-          <columns large="4" small="6">{{ reservation.boat_length }} m</columns>
+          <columns large="4" small="6">{{ application.boat_length }} m</columns>
           <columns large="2" small="6"><b>Leveys</b></columns>
-          <columns large="4" small="6">{{ reservation.boat_width }} m</columns>
+          <columns large="4" small="6">{{ application.boat_width }} m</columns>
         </row>
         <spacer size="24"></spacer>
         <table class="hr">
@@ -92,12 +92,12 @@ lang: fi
         </table>
         <spacer size="12"></spacer>
         <h5>Säilytys</h5>
-        {{ reservation.storage_method }} {{!--{% if
-        reservation.trailer_registration_number %}--}}
+        {{ application.get_storage_method_display() }} {{!--{% if
+        application.trailer_registration_number %}--}}
         <row class="collapse">
           <columns large="4"><b>Trailerin rekisterinumero</b></columns>
           <columns large="8"
-            >{{ reservation.trailer_registration_number }}</columns
+            >{{ application.trailer_registration_number }}</columns
           >
         </row>
         {{!--{% endif %}--}}
