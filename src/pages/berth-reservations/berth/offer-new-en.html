@@ -3,36 +3,9 @@ layout: berth-reservations
 subject: Bat berth offer
 lang: en
 
-dueDate: 15.5.2020
-harborName: "Aurinkolahden venesatama"
-pierIdentifier: A
-berthNumber: 1
-harborImage: "https://venepaikka-api.test.hel.ninja/media/harbors/bf5a852a-f79a-4afe-b5ad-5d01e52e7bc3/42276.jpg"
-harborAddress: "Aurinkoranta 1, 00990 Helsinki"
-harborWebAddress: ""
-harborMap: ""
-wasteManagement: true
-gate: true
-electricity: true
-lighting: true
-water: true
-width: "5,0 m"
-length: "3,5 m"
-mooringType: Peräpoiju
-invoice: {
-  basePrice: "284,00 €",
-  mooring: "79,52 €",
-  electricity: "34,08 €",
-  water: "5,68 €",
-  wasteManagement: "22,72 €",
-  gate: "4,00 €",
-  lighting: "10,00 €",
-  berthTotal: "365,77 €",
-  parkingPermit: "75,00 €",
-  total: "440,77 €",
-}
-paymentUrl: '#'
-cancelUrl: '#'
+due_date: 15.5.2020
+payment_url: '#'
+cancel_url: '#'
 ---
 
 <container>
@@ -43,7 +16,7 @@ cancelUrl: '#'
       <p>
         Dear customer, thank you for your application. We have processed it and we would
         now like to offer you the boat berth specified below. If you wish to accept it,
-        please pay the invoice before the due date {{ dueDate }}.
+        please pay the invoice before the due date {{ order.due_date }}.
       </p>
 
       <h3 class="text-lg">Boat berth offered</h3>
@@ -62,10 +35,10 @@ cancelUrl: '#'
               1. Read the attached boat berth lease agreement terms and the harbour rules
             </p>
             <p>
-              2. Pay the invoice via this link before the due date {{ field 'dueDate' }}:
+              2. Pay the invoice via this link before the due date {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'invoice.total' }} &rarr;</button>
+            <button class="expanded" href="{{ field 'payment_url' }}">Make your payment {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body">
               Please note that you can only pay the invoice via this link. We cannot accept
@@ -75,7 +48,7 @@ cancelUrl: '#'
             <b>If you do NOT wish to reserve the boat berth, please:</b>
             <p>1. Notify us via this link:</p>
 
-            <button class="expanded secondary" href="{{ field 'cancelUrl' }}">No thank you, I do not wish to reserve this boat berth &rarr;</button>
+            <button class="expanded secondary" href="{{ field 'cancel_url' }}">No thank you, I do not wish to reserve this boat berth &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Please note that if you choose not to reserve the boat berth offered, your

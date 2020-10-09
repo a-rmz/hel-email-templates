@@ -1,34 +1,39 @@
 <row>
   <columns large="5">
     {{# ifeq lang "fi" }}
-    <img src="{{ field 'harborImage' }}" alt="Sataman kuva" class="img-ml"/>
+    <img src="{{ field 'order.lease.berth.pier.harbor.image_file.url' }}" alt="Sataman kuva" class="img-ml"/>
     {{/ ifeq }}
     {{# ifeq lang "sv" }}
-    <img src="{{ field 'harborImage' }}" alt="Hamnbild" class="img-ml"/>
+    <img src="{{ field 'order.lease.berth.pier.harbor.image_file.url' }}" alt="Hamnbild" class="img-ml"/>
     {{/ ifeq }}
     {{# ifeq lang "en" }}
-    <img src="{{ field 'harborImage' }}" alt="Harbor image" class="img-ml"/>
+    <img src="{{ field 'order.lease.berth.pier.harbor.image_file.url' }}" alt="Harbor image" class="img-ml"/>
     {{/ ifeq }}
   </columns>
 
   <columns large="7">
-    <h3 style="margin-top: 4px !important;" class="mb-0">{{ field 'harborName' }}</h3>
+    <h3 style="margin-top: 4px !important;" class="mb-0">{{ field 'order.lease.berth.pier.harbor.name' }}</h3>
     <p style="margin-bottom: 16px;" class="text-body">
-      {{ field 'harborAddress' }}
+      {{ field 'order.lease.berth.pier.harbor.name' }}
     </p>
     <p style="margin-bottom: 12px;" class="text-sm">
-      <a href="{{ field 'harborWebAddress' }}">
+      <a href="{{ field 'order.lease.berth.pier.harbor.www_url' }}">
         {{# ifeq lang "fi" }}Toimipisteen nettisivut{{/ ifeq }}
         {{# ifeq lang "sv" }}Webbplats{{/ ifeq }}
         {{# ifeq lang "en" }}Website{{/ ifeq }}
       </a>
     </p>
+    {% for harbor_map in order.lease.berth.pier.harbor.maps.all() %}
     <p class="text-sm">
-      <a href="{{ field 'harborMap' }}">
+      {{{{raw}}}}
+      <a href="{{ harbor_map.map_file.url }}">
+      {{{{/raw}}}}
         {{# ifeq lang "fi" }}Satamakartta (PDF){{/ ifeq }}
         {{# ifeq lang "sv" }}Hamnkartan (PDF){{/ ifeq }}
         {{# ifeq lang "en" }}Harbor map (PDF){{/ ifeq }}
-      </a></p>
+      </a>
+    </p>
+    {% endfor %}
   </columns>
 </row>
 
@@ -36,7 +41,7 @@
   <columns>
     <table style="width: auto; table-layout: fixed;">
       <tr>
-        {{# rif 'wasteManagement' }}
+        {{# rif 'order.lease.berth.pier.waste_collection' }}
         <th class="property">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd">
@@ -52,7 +57,7 @@
           {{# ifeq lang "en" }}Waste management{{/ ifeq }}
         </th>
         {{/ rif }}
-        {{# rif 'gate' }}
+        {{# rif 'order.lease.berth.pier.gate' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +74,7 @@
           {{# ifeq lang "en" }}Gate{{/ ifeq }}
         </th>
         {{/ rif }}
-        {{# rif 'electricity' }}
+        {{# rif 'order.lease.berth.pier.electricity' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +91,7 @@
           {{# ifeq lang "en" }}Electricity{{/ ifeq }}
         </th>
         {{/ rif }}
-        {{# rif 'lighting' }}
+        {{# rif 'order.lease.berth.pier.lighting' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +112,7 @@
           {{# ifeq lang "en" }}Lighting{{/ ifeq }}
         </th>
         {{/ rif }}
-        {{# rif 'water' }}
+        {{# rif 'order.lease.berth.pier.water' }}
         <th class="property">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -135,13 +140,13 @@
     {{# ifeq lang "sv" }}Kaj:{{/ ifeq }}
     {{# ifeq lang "en" }}Pier:{{/ ifeq }}
   </p></columns>
-  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'pierIdentifier' }}</p></columns>
+  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'order.lease.berth.pier.identifier' }}</p></columns>
   <columns large="2" class="pb-0"><p class="text-bold">
     {{# ifeq lang "fi" }}Paikka:{{/ ifeq }}
     {{# ifeq lang "sv" }}Plats:{{/ ifeq }}
     {{# ifeq lang "en" }}Berth:{{/ ifeq }}
   </p></columns>
-  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'berthNumber' }}</p></columns>
+  <columns large="4" class="pb-0"><p class="text-bold">{{ field 'order.lease.berth.number' }}</p></columns>
 </row>
 
 <row>
@@ -153,7 +158,7 @@
           {{# ifeq lang "sv" }}Bredd:{{/ ifeq }}
           {{# ifeq lang "en" }}Width:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ field 'width' }}</td>
+        <td style="width: 60%;">{{ field 'order.lease.berth.berth_type.width' }}</td>
       </tr>
       <tr>
         <td style="width: 40%;">
@@ -161,7 +166,7 @@
           {{# ifeq lang "sv" }}Längd:{{/ ifeq }}
           {{# ifeq lang "en" }}Length:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ field 'length' }}</td>
+        <td style="width: 60%;">{{ field 'order.lease.berth.berth_type.length' }}</td>
       </tr>
       <tr>
         <td style="width: 40%;">
@@ -169,7 +174,7 @@
           {{# ifeq lang "sv" }}Förtöjning:{{/ ifeq }}
           {{# ifeq lang "en" }}Mooring type:{{/ ifeq }}
         </td>
-        <td style="width: 60%;">{{ field 'mooringType' }}</td>
+        <td style="width: 60%;">{{ field 'order.lease.berth.berth_type.get_mooring_type_display()' }}</td>
       </tr>
     </table>
   </columns>

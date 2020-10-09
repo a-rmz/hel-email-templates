@@ -2,25 +2,6 @@
 layout: berth-reservations
 subject: Båtplatsfaktura
 lang: sv
-
-dueDate: 15.5.2020
-harborName: "Aurinkolahden venesatama"
-pierIdentifier: A
-berthNumber: 1
-harborAddress: "Aurinkoranta 1, 00990 Helsinki"
-invoice: {
-  basePrice: "284,00 €",
-  mooring: "79,52 €",
-  electricity: "34,08 €",
-  water: "5,68 €",
-  wasteManagement: "22,72 €",
-  gate: "4,00 €",
-  lighting: "10,00 €",
-  berthTotal: "365,77 €",
-  parkingPermit: "75,00 €",
-  total: "440,77 €",
-}
-paymentUrl: '#'
 ---
 
 <container>
@@ -36,10 +17,10 @@ paymentUrl: '#'
       <h3 class="text-lg">Båtplats som fakturan gäller</h3>
 
       <p>
-        {{ field 'harborName' }}<br/>
-        {{ field 'harborAddress' }}<br/>
+        {{ field 'order.lease.berth.pier.harbor.name' }}<br/>
+        {{ field 'order.lease.berth.pier.harbor.street_address' }}<br/>
         <br/>
-        Plats: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+        Plats: {{ field 'order.lease.berth.pier.identifier' }} {{ field 'order.lease.berth.number' }}
       </p>
 
       <h3 class="text-lg">Båtplatsens pris</h3>
@@ -50,10 +31,10 @@ paymentUrl: '#'
         <tr>
           <td style="padding: 48px;">
             <p>
-              Betala fakturan via denna länk före förfallodatumet {{ field 'dueDate' }}:
+              Betala fakturan via denna länk före förfallodatumet {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Betala {{ field 'invoice.total' }} &rarr;</button>
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Betala {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Observera att fakturan kan betalas endast via denna länk. Betalningar som gjorts på
