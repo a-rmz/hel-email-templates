@@ -34,10 +34,10 @@ payment_url: '#'
         <tr>
           <td style="padding: 48px;">
             <p>
-              Betala fakturan via denna länk före förfallodatumet {{ field 'dueDate' }}:
+              Betala fakturan via denna länk före förfallodatumet {{ field 'order.due_date' }}:
             </p>
 
-            <button class="expanded" href="{{ field 'paymentUrl' }}">Betala {{ field 'order.total_price' }}&euro; &rarr;</button>
+            <button class="expanded" href="{{ field 'payment_url' }}">Betala {{ field 'order.total_price' }}&euro; &rarr;</button>
 
             <p class="text-body" style="margin-bottom: 0;">
               Observera att fakturan kan betalas endast via denna länk. Betalningar som gjorts på

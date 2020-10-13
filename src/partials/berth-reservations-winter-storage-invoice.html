@@ -25,8 +25,12 @@
           <td class="text-body text-right">{{ field 'order.fixed_price_total' }}&euro;</td>
         </tr>
         {% if optional_services %}
-        <tr>
-          <td class="text-body" colspan="3">Lisäpalvelut:</td>
+        <tr style="margin-top: 16px;">
+          <td class="text-body" colspan="3">
+            {{# ifeq lang "fi" }}Lisäpalvelut:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Tilläggstjänsterna:{{/ ifeq }}
+            {{# ifeq lang "en" }}Additional services:{{/ ifeq }}
+          </td>
         </tr>
         {% endif %}
         {% for order_line in optional_services %}
