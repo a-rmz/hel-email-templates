@@ -1,0 +1,125 @@
+<table style="border: 2px solid gray;">
+  <tr>
+    <td>
+      <table style="width: 400px; margin: 40px auto;">
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Perushinta{{/ ifeq }}
+            {{# ifeq lang "sv" }}Grundavgift{{/ ifeq }}
+            {{# ifeq lang "en" }}Basic price{{/ ifeq }}
+            (3,5 m):
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.basePrice' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Kiinnitys:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Förtöjning:{{/ ifeq }}
+            {{# ifeq lang "en" }}Mooring:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">28 %</td>
+          <td class="text-body text-right">{{ field 'invoice.mooring' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Sähkö:{{/ ifeq }}
+            {{# ifeq lang "sv" }}El:{{/ ifeq }}
+            {{# ifeq lang "en" }}Electricity:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">12 %</td>
+          <td class="text-body text-right">{{ field 'invoice.electricity' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Vesi:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Vatten:{{/ ifeq }}
+            {{# ifeq lang "en" }}Water:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">2 %</td>
+          <td class="text-body text-right">{{ field 'invoice.water' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body">
+            {{# ifeq lang "fi" }}Jätehuolto:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Avfallshantering:{{/ ifeq }}
+            {{# ifeq lang "en" }}Waste management:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">8 %</td>
+          <td class="text-body text-right">{{ field 'invoice.wasteManagement' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Portti:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Port:{{/ ifeq }}
+            {{# ifeq lang "en" }}Gate:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.gate' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Valaistus:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Belysning:{{/ ifeq }}
+            {{# ifeq lang "en" }}Lighting:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.lighting' }}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr class="rule-thin"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Venepaikka yhteensä:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Båtplatsen totalt:{{/ ifeq }}
+            {{# ifeq lang "en" }}Berth in total:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.berthTotal' }}</td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="3">
+            {{# ifeq lang "fi" }}Lisäpalvelut:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Tilläggstjänster:{{/ ifeq }}
+            {{# ifeq lang "en" }}Additional services:{{/ ifeq }}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}Pysäköintilupa:{{/ ifeq }}
+            {{# ifeq lang "sv" }}Parkeringstillstånd:{{/ ifeq }}
+            {{# ifeq lang "en" }}Parking permit:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.parkingPermit' }}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr class="rule-thin"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-body" colspan="2">
+            {{# ifeq lang "fi" }}YHTEENSÄ:{{/ ifeq }}
+            {{# ifeq lang "sv" }}TOTALT:{{/ ifeq }}
+            {{# ifeq lang "en" }}TOTAL:{{/ ifeq }}
+          </td>
+          <td class="text-body text-right">{{ field 'invoice.total' }} /
+            {{# ifeq lang "fi" }}vuosi{{/ ifeq }}
+            {{# ifeq lang "sv" }}år{{/ ifeq }}
+            {{# ifeq lang "en" }}year{{/ ifeq }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <p class="text-sm mb-0" style="margin-top: 16px;">
+              <a href="">
+                {{# ifeq lang "fi" }}Liikuntapalvelujen hinnasto{{/ ifeq }}
+                {{# ifeq lang "sv" }}Idrottsservicens prislista{{/ ifeq }}
+                {{# ifeq lang "en" }}Price list for sports services{{/ ifeq }}
+              </a>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

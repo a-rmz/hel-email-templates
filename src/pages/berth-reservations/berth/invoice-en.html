@@ -1,0 +1,74 @@
+---
+layout: berth-reservations
+subject: Boat berth invoice
+lang: en
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+invoice: {
+  basePrice: "284,00 €",
+  mooring: "79,52 €",
+  electricity: "34,08 €",
+  water: "5,68 €",
+  wasteManagement: "22,72 €",
+  gate: "4,00 €",
+  lighting: "10,00 €",
+  berthTotal: "365,77 €",
+  parkingPermit: "75,00 €",
+  total: "440,77 €",
+}
+paymentUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Dear customer, here is the invoice for your boat berth. You can pay it by clicking
+        the "make your payment" button below in this message.
+      </p>
+
+      <h3 class="text-lg">Boat berth that the invoice concerns</h3>
+
+      <p>
+        {{ field 'harborName' }}<br/>
+        {{ field 'harborAddress' }}<br/>
+        <br/>
+        Berth: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+      </p>
+
+      <h3 class="text-lg">Price of the boat berth</h3>
+
+      {{> berth-reservations-berth-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <p>
+              Please pay the invoice via this link before the due date {{ field 'dueDate' }}:
+            </p>
+
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'invoice.total' }} &rarr;</button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Please note that you can only pay the invoice via this link. We cannot accept
+              payments made through other means. For more information, please contact our
+              customer service department at venepaikat@hel.fi.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>

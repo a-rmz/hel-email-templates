@@ -50,12 +50,8 @@ function clean(done) {
 
 // Compile layouts, pages, and partials into flat HTML files
 // Then parse using Inky templates
-
-// Escape handlebars and make handlebar comments visible
-// in PRODUCTION
-
 function pages() {
-  return gulp.src(['src/pages/**/*.html', '!src/pages/archive/**/*.html'])
+  return gulp.src('src/pages/**/*.html')
     .pipe($.if(PRODUCTION, $.replace('{{!-- raw --}}', '{{{{raw}}}}')))
     .pipe($.if(PRODUCTION, $.replace('{{!-- /raw --}}', '{{{{/raw}}}}')))
     .pipe($.if(PRODUCTION, $.replace('{{!--', '')))
@@ -226,9 +222,9 @@ function zip() {
 
     var moveImages = gulp.src(sourcePath)
       .pipe($.htmlSrc({ selector: 'img'}))
-      .pipe($.rename(function (path) {
-        path.dirname = fileName + path.dirname.replace('docs', '');
-        return path;
+      .pipe($.rename(function (currentpath) {
+        currentpath.dirname = path.join(fileName, currentpath.dirname.replace('docs', ''));
+        return currentpath;
       }));
 
     return merge(moveHTML, moveImages)

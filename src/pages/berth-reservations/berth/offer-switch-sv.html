@@ -1,0 +1,98 @@
+---
+layout: berth-reservations
+subject: Erbjudande om byte av båtplats
+lang: sv
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborImage: "https://venepaikka-api.test.hel.ninja/media/harbors/bf5a852a-f79a-4afe-b5ad-5d01e52e7bc3/42276.jpg"
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+harborWebAddress: ""
+harborMap: ""
+wasteManagement: true
+gate: true
+electricity: true
+lighting: true
+water: true
+width: "5,0 m"
+length: "3,5 m"
+mooringType: Peräpoiju
+invoice: {
+  basePrice: "284,00 €",
+  mooring: "79,52 €",
+  electricity: "34,08 €",
+  water: "5,68 €",
+  wasteManagement: "22,72 €",
+  gate: "4,00 €",
+  lighting: "10,00 €",
+  berthTotal: "365,77 €",
+  parkingPermit: "75,00 €",
+  total: "440,77 €",
+}
+acceptUrl: '#'
+cancelUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Bästa kund, tack för din ansökan. Vi har behandlat den och erbjuder dig båtplatsen
+        nedan. Om du vill ta emot den ska du meddela oss om det via länken i slutet av
+        meddelandet.
+      </p>
+
+      <h3 class="text-lg">Båtplats som erbjuds</h3>
+
+      {{> berth-reservations-berth-details }}
+
+      <h3 class="text-lg">Båtplatsens pris</h3>
+
+      {{> berth-reservations-berth-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <b>Om du vill ta emot bytesplatsen:</b>
+            <p>
+              1. Läs igenom de bifogade hyresavtalsvillkoren för båtplatsen och båthamnens regler
+            </p>
+            <p>
+              2. Meddela oss att du tar emot bytesplatsen via denna länk:
+            </p>
+
+            <button class="expanded" href="{{ field 'acceptUrl' }}">Tack, jag byter till den plats som erbjuds &rarr;</button>
+
+            <p class="text-body">
+              Observera att du inte får behålla din nuvarande plats om du tar emot bytesplatsen.
+              Vi kommer inte att debitera eller ersätta prisskillnaden om du byter till en plats
+              av en annan storlek. För mer information, kontakta vår kundtjänst via
+              venepaikat@hel.fi.
+            </p>
+            <b>Om du inte vill ta emot bytesplatsen, men vill att din ansökan ska bli i kraft:</b>
+            <p>1. Meddela oss om det via denna länk:</p>
+
+            <button class="expanded secondary" href="{{ field 'cancelUrl' }}">Nej tack, jag vill inte ha båtplatsen &rarr;
+            </button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Observera att du behåller din nuvarande båtplats om du väljer att inte ta emot
+              bytesplatsen. Din ansökan blir kvar i kön, så att vi kan försöka ge dig en plats
+              vid följande utdelning.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>

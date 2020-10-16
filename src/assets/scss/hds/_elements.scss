@@ -1,0 +1,37 @@
+@import 'variables';
+
+.rule-thick {
+  height: 5px;
+  border: none;
+  background: $color-coat-of-arms-blue;
+}
+
+.rule-thin {
+  height: 1px;
+  border: none;
+  background: $color-black-30;
+}
+
+table.button.secondary {
+  table td {
+    background: transparent;
+    border: 2px solid $color-bus;
+
+    a, a:visited {
+      color: $color-bus;
+    }
+  }
+
+  &:hover table td {
+    background: rgba($color-bus-light-5, 0.2);
+
+    a, a:visited {
+      color: $color-bus;
+    }
+  }
+}
+
+.img-ml {
+  max-width: calc(100% - #{$spacing-m});
+  margin-right: $spacing-m;
+}

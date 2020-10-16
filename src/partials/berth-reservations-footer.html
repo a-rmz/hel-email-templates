@@ -1,0 +1,50 @@
+<row>
+  <columns class="footer">
+    {{# ifeq lang "fi" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg"
+      alt="Helsinki"
+    />
+    {{/ ifeq }}
+    {{# ifeq lang "sv" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-sv.svg"
+      alt="Helsingfors"
+    />
+    {{/ ifeq }}
+    {{# ifeq lang "en" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg"
+      alt="Helsinki"
+    />
+    {{/ ifeq }}
+
+    <p class="text-body">
+      {{# ifeq lang "fi" }}
+      Venepaikkavaraukset<br/>
+      Fredriksberg A 1<br/>
+      00100 Helsinki
+      {{/ ifeq }}
+      {{# ifeq lang "sv" }}
+      Båtplatsbokningar<br/>
+      Fredriksberg A 1<br/>
+      00100 Helsingfors
+      {{/ ifeq }}
+      {{# ifeq lang "en" }}
+      Venepaikkavaraukset (Berth reservations)<br/>
+      Fredriksberg A 1<br/>
+      00100 Helsinki
+      {{/ ifeq }}
+    </p>
+
+    <hr class="rule-thin"/>
+
+    <p class="text-sm">
+      &copy; Copyright 2020 &bull;
+      {{# ifeq lang "fi" }}Kaikki oikeudet pidätetään{{/ ifeq }}
+      {{# ifeq lang "sv" }}Alla rättigheter förbehållna{{/ ifeq }}
+      {{# ifeq lang "en" }}All rights reserved{{/ ifeq }}
+      &bull;
+    </p>
+  </columns>
+</row>

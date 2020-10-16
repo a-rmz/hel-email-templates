@@ -1,0 +1,32 @@
+<row>
+  <columns class="header">
+    {{# ifeq lang "fi" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg"
+      alt="Helsinki"
+    />
+    {{/ ifeq }}
+    {{# ifeq lang "sv" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-sv.svg"
+      alt="Helsingfors"
+    />
+    {{/ ifeq }}
+    {{# ifeq lang "en" }}
+    <img
+      src="https://hds.hel.fi/static/assets/logo/helsinki-fi.svg"
+      alt="Helsinki"
+    />
+    {{/ ifeq }}
+
+    <h1>
+      {{# ifeq lang "fi" }}Helsingin kaupunki / venepaikat{{/ ifeq }}
+      {{# ifeq lang "sv" }}Helsingfors stad / båtplatser{{/ ifeq }}
+      {{# ifeq lang "en" }}City of Helsinki / boat berths{{/ ifeq }}
+    </h1>
+
+    <h2>{{subject}}</h2>
+
+    <hr class="rule-thick"/>
+  </columns>
+</row>

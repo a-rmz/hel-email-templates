@@ -1,0 +1,68 @@
+---
+layout: berth-reservations
+subject: Winter storage place invoice
+lang: en
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+invoice: {
+  basePrice: "84,00 €",
+  winterStorageTotal: "334,08 €",
+  parkingPermit: "30,00 €",
+  total: "364,08 €"
+}
+paymentUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Dear customer, here is the invoice for your winter storage place. You can pay it by
+        clicking the ‘make your payment’ button below in this message.
+      </p>
+
+      <h3 class="text-lg">Winter storage place that the invoice concerns</h3>
+
+      <p>
+        {{ field 'harborName' }}<br/>
+        {{ field 'harborAddress' }}<br/>
+        <br/>
+        Place: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+      </p>
+
+      <h3 class="text-lg">Price of the winter storage place</h3>
+
+      {{> berth-reservations-winter-storage-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <p>
+              Please pay the invoice via this link before the due date {{ field 'dueDate' }}:
+            </p>
+
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Make your payment {{ field 'invoice.total' }} &rarr;</button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Please note that you can only pay the invoice via this link. We cannot accept
+              payments made through other means. For more information, please contact our
+              customer service department at venepaikat@hel.fi.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>

@@ -1,0 +1,68 @@
+---
+layout: berth-reservations
+subject: Talvisäilytyspaikkalasku
+lang: fi
+
+dueDate: 15.5.2020
+harborName: "Aurinkolahden venesatama"
+pierIdentifier: A
+berthNumber: 1
+harborAddress: "Aurinkoranta 1, 00990 Helsinki"
+invoice: {
+  basePrice: "84,00 €",
+  winterStorageTotal: "334,08 €",
+  parkingPermit: "30,00 €",
+  total: "364,08 €"
+}
+paymentUrl: '#'
+---
+
+<container>
+  {{> berth-reservations-header }}
+
+  <row style="margin-bottom: 72px;">
+    <columns>
+      <p>
+        Hyvä asiakas, tässä lasku talvisäilytyspaikasta. Voit maksaa sen klikkaamalla "siirry maksamaan" -painiketta
+        alempana tässä viestissä.
+      </p>
+
+      <h3 class="text-lg">Laskun aiheena oleva talvisäilytyspaikka</h3>
+
+      <p>
+        {{ field 'harborName' }}<br/>
+        {{ field 'harborAddress' }}<br/>
+        <br/>
+        Paikka: {{ field 'pierIdentifier' }} {{ field 'berthNumber' }}
+      </p>
+
+      <h3 class="text-lg">Talvisäilytyspaikan hinta</h3>
+
+      {{> berth-reservations-winter-storage-invoice }}
+
+      <table style="margin: 32px 0; background-color: #9fc9eb; color: white;">
+        <tr>
+          <td style="padding: 48px;">
+            <p>
+              Maksa lasku tämän linkin kautta ennen eräpäivää {{ field 'dueDate' }}:
+            </p>
+
+            <button class="expanded" href="{{ field 'paymentUrl' }}">Siirry maksamaan {{ field 'invoice.total' }} &rarr;</button>
+
+            <p class="text-body" style="margin-bottom: 0;">
+              Huomaathan, että laskun voi maksaa vain tämän linkin kautta. Muulla
+              tavoin maksettuja maksuja ei voida ottaa vastaan. Lisätietoja
+              asiakaspalvelustamme venepaikat@hel.fi.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      {{> berth-reservations-info-section }}
+
+    </columns>
+  </row>
+
+  {{> berth-reservations-footer }}
+
+</container>
