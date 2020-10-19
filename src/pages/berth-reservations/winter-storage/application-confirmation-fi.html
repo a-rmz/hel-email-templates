@@ -6,7 +6,7 @@ lang: fi
 ---
 
 <container>
-  {{> berth-reservations-header}} {{!-- raw --}}
+  {{> berth-reservations-header}}
   <row>
     <columns small="12">
       <h4>Hei {{ application.first_name }}!</h4>
@@ -87,8 +87,8 @@ lang: fi
         </table>
         <spacer size="12"></spacer>
         <h5>Säilytys</h5>
-        {{ application.get_storage_method_display() }} {{!--{% if
-        application.trailer_registration_number %}--}}
+        {{ field 'application.get_storage_method_display()' }}
+        {{!--{% if application.trailer_registration_number %}--}}
         <row class="collapse">
           <columns large="4"><b>Trailerin rekisterinumero</b></columns>
           <columns large="8"
@@ -103,5 +103,5 @@ lang: fi
       </p>
     </columns>
   </row>
-  {{!-- /raw --}} {{> berth-reservations-footer}}
+  {{> berth-reservations-footer}}
 </container>
